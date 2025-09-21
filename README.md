@@ -1,76 +1,56 @@
-This is a Kotlin Multiplatform project targeting Android, iOS, Web, Desktop (JVM).
+# IntelliJ Icons Compose Multiplatform
 
-* [/composeApp](./composeApp/src) is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - [commonMain](./composeApp/src/commonMain/kotlin) is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    the [iosMain](./composeApp/src/iosMain/kotlin) folder would be the right place for such calls.
-    Similarly, if you want to edit the Desktop (JVM) specific part, the [jvmMain](./composeApp/src/jvmMain/kotlin)
-    folder is the appropriate location.
+![Kotlin](https://img.shields.io/badge/kotlin-multiplatform-blue.svg?style=flat)
+![Compose Multiplatform](https://img.shields.io/badge/Compose-Multiplatform-blue)
+![Maven Central](https://img.shields.io/maven-central/v/io.github.xcodebn/intellij-icons-compose.svg)
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Platform](https://img.shields.io/badge/platform-android%20%7C%20ios%20%7C%20desktop%20%7C%20web-lightgrey)
 
-* [/iosApp](./iosApp/iosApp) contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform,
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+Browse all 8000+ IntelliJ Platform icons in a Compose Multiplatform library.
 
-### Build and Run Android Application
+A Compose port of https://intellij-icons.jetbrains.design/
 
-To build and run the development version of the Android app, use the run configuration from the run widget
-in your IDE’s toolbar or build it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:assembleDebug
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:assembleDebug
-  ```
+## Library
 
-### Build and Run Desktop (JVM) Application
+Add the dependency to your project:
 
-To build and run the development version of the desktop app, use the run configuration from the run widget
-in your IDE’s toolbar or run it directly from the terminal:
-- on macOS/Linux
-  ```shell
-  ./gradlew :composeApp:run
-  ```
-- on Windows
-  ```shell
-  .\gradlew.bat :composeApp:run
-  ```
+```kotlin
+dependencies {
+    implementation("io.github.xcodebn:intellij-icons-compose:1.0.0")
+}
+```
 
-### Build and Run Web Application
+## Usage
 
-To build and run the development version of the web app, use the run configuration from the run widget
-in your IDE's toolbar or run it directly from the terminal:
-- for the Wasm target (faster, modern browsers):
-  - on macOS/Linux
-    ```shell
-    ./gradlew :composeApp:wasmJsBrowserDevelopmentRun
-    ```
-  - on Windows
-    ```shell
-    .\gradlew.bat :composeApp:wasmJsBrowserDevelopmentRun
-    ```
-- for the JS target (slower, supports older browsers):
-  - on macOS/Linux
-    ```shell
-    ./gradlew :composeApp:jsBrowserDevelopmentRun
-    ```
-  - on Windows
-    ```shell
-    .\gradlew.bat :composeApp:jsBrowserDevelopmentRun
-    ```
+Access all icons through the `IntellijIconsCompose` object:
 
-### Build and Run iOS Application
+```kotlin
+import github.xcodebn.intellijiconscompose.IntellijIconsCompose
 
-To build and run the development version of the iOS app, use the run configuration from the run widget
-in your IDE’s toolbar or open the [/iosApp](./iosApp) directory in Xcode and run it from there.
+// Example usage
+Icon(
+    imageVector = IntellijIconsCompose.Archive,
+    contentDescription = "Archive"
+)
+```
 
----
+## Targets
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html),
-[Compose Multiplatform](https://github.com/JetBrains/compose-multiplatform/#compose-multiplatform),
-[Kotlin/Wasm](https://kotl.in/wasm/)…
+- Android
+- iOS  
+- Desktop (JVM)
+- Web (JS)
 
-We would appreciate your feedback on Compose/Web and Kotlin/Wasm in the public Slack channel [#compose-web](https://slack-chats.kotlinlang.org/c/compose-web).
-If you face any issues, please report them on [YouTrack](https://youtrack.jetbrains.com/newIssue?project=CMP).
+> **Note**: This library hasn't been fully tested on all platforms yet. Testers and feedback are appreciated!
+
+## Demo App
+
+Run the demo app to browse all available icons:
+
+```shell
+./gradlew :composeApp:run
+```
+
+## License
+
+MIT License - Icons are from the IntelliJ Platform (Apache 2.0). See [LICENSE](LICENSE) for details.
