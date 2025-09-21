@@ -1,0 +1,51 @@
+package github.xcodebn.intellijiconscompose.general
+
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.PathFillType
+import androidx.compose.ui.graphics.SolidColor
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.group
+import androidx.compose.ui.graphics.vector.path
+import androidx.compose.ui.unit.dp
+
+val Notificationinfo: ImageVector
+    get() {
+        if (_Notificationinfo != null) return _Notificationinfo!!
+
+        _Notificationinfo = ImageVector.Builder(
+            name = "Notificationinfo",
+            defaultWidth = 24.0.dp,
+            defaultHeight = 24.0.dp,
+            viewportWidth = 24.0f,
+            viewportHeight = 24.0f
+        ).apply {
+            path(
+                fill = SolidColor(Color(0xFF389FD6)),
+                pathFillType = PathFillType.EvenOdd
+            ) {
+                moveTo(12f, 22f)
+                curveTo(6.48f, 22.00f, 2.00f, 17.52f, 2.00f, 12.00f)
+                curveTo(2.00f, 6.48f, 6.48f, 2.00f, 12.00f, 2.00f)
+                curveTo(17.52f, 2.00f, 22.00f, 6.48f, 22.00f, 12.00f)
+                curveTo(22.00f, 17.52f, 17.52f, 22.00f, 12.00f, 22.00f)
+                close()
+                moveTo(10f, 10f)
+                lineTo(10f, 18f)
+                lineTo(14f, 18f)
+                lineTo(14f, 10f)
+                lineTo(10f, 10f)
+                close()
+                moveTo(10f, 5f)
+                lineTo(10f, 8f)
+                lineTo(14f, 8f)
+                lineTo(14f, 5f)
+                lineTo(10f, 5f)
+                close()
+            }
+        }.build()
+
+        return _Notificationinfo!!
+    }
+
+private var _Notificationinfo: ImageVector? = null
+
